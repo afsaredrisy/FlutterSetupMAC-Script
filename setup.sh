@@ -1,8 +1,8 @@
 #!/bin/zsh
 
-if [[ $(ls sdk/flutter/bin 2&> /dev/null ) ]]; then
-	if [[ -z $(echo $PATH | grep sdk/flutter/bin) ]]; then
-		export PATH="$PATH:sdk/flutter/bin";
+if [[ $(ls $PATH/flutter/bin 2&> /dev/null ) ]]; then
+	if [[ -z $(echo $PATH | grep $PATH/flutter/bin) ]]; then
+		export PATH="$PATH:$PATH/flutter/bin";
 		source ~/.zshrc > /dev/null;
 		flutter upgrade --force;
 		echo "\n\nFlutter added to environement!"
